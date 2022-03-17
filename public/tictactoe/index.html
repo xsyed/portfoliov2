@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Overpass|Pangolin" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#000">
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0">
+    <title>Tic Tac Toe</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="inner">
+        <div class="head">
+            <h1>TIC TAC TOE</h1>
+        </div>
+    <div class="board">
+        <div class="menu">
+
+            <div class="playerselection">
+                <i class="material-icons computer">computer</i>  ---  <i class="material-icons twoplayers">people</i>
+            </div>
+
+            <div class="xoselection">
+                <i class="material-icons op">radio_button_unchecked</i>  ---  <i class="material-icons xp">close</i>
+            </div>
+            <div class="difficulty">
+                <i class="hard">Hard</i>  ---  <i class="easy">Easy</i>
+            </div>
+            <div class="startcont">
+                <i class="material-icons start">arrow_forward</i>
+            </div>
+
+    </div>
+
+    <div class="grid">
+
+            <div class="scoreboard">
+                <span class="fplyr"><i class="material-icons indi pactive">keyboard_arrow_right</i><span>YOU [ O ]</span></span>
+                <div class="score">
+                    <span class="fscore">0</span>-<span class="sscore">0</span>
+                </div>
+                <span class="splyr"><span>BOT [ X ]</span><i class="material-icons indi pdisable">keyboard_arrow_left</i></span>
+            </div>
+            
+            <table>
+                <tr>
+                    <td>
+                        <div>
+                            <span class="oblock blockActive">O</span>
+                            <span class="xblock blockInactive">X</span>
+
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <span class="oblock blockActive">O</span>
+                            <span class="xblock blockInactive">X</span>
+
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <span class="oblock blockActive">O</span>
+                            <span class="xblock blockInactive">X</span>
+
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>
+                            <span class="oblock blockActive">O</span>
+                            <span class="xblock blockInactive">X</span>
+
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <span class="oblock blockActive">O</span>
+                            <span class="xblock blockInactive">X</span>
+
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <span class="oblock blockActive">O</span>
+                            <span class="xblock blockInactive">X</span>
+
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>
+                            <span class="oblock blockActive">O</span>
+                            <span class="xblock blockInactive">X</span>
+
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <span class="oblock blockActive">O</span>
+
+                            <span class="xblock blockInactive">X</span>
+
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <span class="oblock blockActive">O</span>
+                            <span class="xblock blockInactive">X</span>
+
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="whowon">
+                <span class="whowonstatus">Player 1 Won!</span>
+            </div>
+
+            <div class="restartcontrols">
+                <i class="material-icons restart">refresh</i>
+                <i class="material-icons home">home</i>
+            </div>
+    </div>
+
+    </div>
+    
+    <div class="footer"></div>
+    
+    </div>
+
+ </div>   
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script src="main.js"></script>
+</body>
+
+</html>
