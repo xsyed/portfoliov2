@@ -7,10 +7,9 @@ const header = {
 const about = {
   // all the properties are optional - can be left empty or deleted
   name: 'Samiuddin Syed',
-  role: 'Software Engineer',
+  role: 'Software Developer',
   description:
-    'Dedicated software engineer with more than three years of experience in developing quality and efficient web applications. Proficient in JavaScript, React.js, HTML5, CSS, Node.js, and MySQL.',
-  resume: 'https://syedsamiuddin.com/resume.pdf',
+    'Dedicated software developer with more than three years of experience in developing quality and efficient web applications. Proficient in JavaScript, React.js, HTML5, CSS, Node.js, and MySQL.',
   social: {
     linkedin: 'https://www.linkedin.com/in/syedsamiuddin96/',
     github: 'https://github.com/xsyed',
@@ -26,7 +25,6 @@ const projects = [
       'TrackGoals is a habit tracker which helps user in tracking habits progress daily, monthly and weekly wise.',
     stack: ['JavaScript', 'PHP', 'MySQL'],
     sourceCode: 'https://github.com/xsyed/trackgoals',
-    livePreview: 'https://trackgoals.me',
   },
   {
     name: 'Ninja Warrior',
@@ -53,7 +51,9 @@ const skills = [
   'CSS',
   'JavaScript',
   'React',
+  'Angular/Angularjs',
   'Nodejs',
+  'Mongodb',
   'MySQL',
   'Java',
   'Git',
@@ -61,7 +61,7 @@ const skills = [
   'jQuery',
   'Bootstrap',
   'RESTful APIs',
-  'DigitalOcean',
+  'Devops',
 ]
 
 const contact = {
