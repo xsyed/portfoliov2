@@ -9,7 +9,7 @@ const about = {
   name: 'Samiuddin Syed',
   role: 'Software Developer',
   description:
-    'Dedicated software developer with more than three years of experience in developing quality and efficient web applications. Proficient in JavaScript, React.js, HTML5, CSS, Node.js, and MySQL.',
+    'Dedicated software developer with more than six years of experience in developing quality and efficient web applications. Proficient in JavaScript, Angular, React.js, Node.js, Java and MySQL.',
   social: {
     linkedin: 'https://www.linkedin.com/in/syedsamiuddin96/',
     github: 'https://github.com/xsyed',

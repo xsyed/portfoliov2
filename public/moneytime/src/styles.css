@@ -1,0 +1,138 @@
+:root{
+  --primary-green: #1C973D;
+  --accent-blue: #33AFC5;
+  --accent-pink: #C82057;
+  --bg: #FFFFFF;
+  --muted: #6b7280;
+  --radius: 12px;
+  --surface: #FFFFFF;
+  --text: #0f172a;
+  --muted-2: #6b7280;
+  --result-bg: #f6f9fa;
+}
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+/* Respect OS preference by default */
+@media (prefers-color-scheme: dark) {
+  :root{
+  /* Darker background and more muted surface for better contrast */
+  /* Use a solid neutral grey for page background to avoid gradients in dark mode */
+  --bg: #1d2424; /* dark mode page background */
+  --surface: #0f1316; /* slightly lighter surface for cards */
+  --text: #e6eef6;
+  --muted-2: #8f9aa5;
+  --primary-green: #168b2b; /* darker, less neon green */
+  --result-bg: #0d1418; /* neutral result surface */
+  /* Light outline color used for inputs and result in dark mode */
+  --dark-outline: rgba(255,255,255,0.08);
+  }
+}
+
+/* Use a solid background in dark mode to avoid visible light-to-dark gradients */
+@media (prefers-color-scheme: dark) {
+  body { background: var(--bg); }
+}
+
+/* Theme classes for explicit override (user preference) */
+.theme-dark {
+  --bg: #1d2424;
+  --surface: #0f1316;
+  --text: #e6eef6;
+  --muted-2: #8f9aa5;
+  --primary-green: #168b2b;
+  --result-bg: #0d1418;
+  --dark-outline: rgba(255,255,255,0.08);
+}
+.theme-dark body { background: var(--bg); }
+.theme-light {
+  --bg: #FFFFFF;
+  --surface: #FFFFFF;
+  --text: #0f172a;
+  --muted-2: #6b7280;
+  --primary-green: #1C973D;
+  --result-bg: #f6f9fa;
+}
+
+body{
+  margin:0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+.app{max-width:760px;margin:0 auto;padding:20px;display:flex;flex-direction:column;gap:18px}
+.header{padding:8px 0}
+.title{margin:0;font-size:22px;color:var(--primary-green)}
+.subtitle{margin:4px 0 0;color:var(--muted);font-size:13px}
+
+.income-card,.calculator-card{background:var(--surface);border-radius:var(--radius);padding:14px;box-shadow:0 6px 18px rgba(12,14,20,0.06)}
+.income-row{display:flex;align-items:center;gap:12px; margin-top: 15px;}
+.annual-value{font-weight:700;font-size:28px}
+.btn{background:var(--primary-green);color:#fff;border:0;padding:8px 12px;border-radius:8px;font-weight:600;cursor:pointer}
+.btn.small{padding:6px 8px;font-size:13px}
+.btn.secondary{background:transparent;color:var(--accent-pink);border:1px solid rgba(200,40,87,0.08)}
+
+.income-form{margin-top:10px;display:flex;flex-direction:column;gap:8px}
+.income-form[aria-hidden="true"]{display:none}
+.income-form[aria-hidden="true"]{display:none}
+input[type="number"]{appearance:none;border:1px solid rgba(0,0,0,0.08);padding:10px;border-radius:8px;font-size:16px;background:transparent;color:var(--text)}
+.purchase-row{display:flex;gap:10px;margin-top:15px}
+.purchase-row input{flex:1}
+.result{margin-top:12px;font-size:16px;padding:10px;border-radius:8px;background:var(--result-bg);color:var(--text)}
+.footer{text-align:center;color:var(--muted-2);font-size:13px;margin-top:6px}
+
+/* Mobile reachability improvements
+   - Ensure interactive controls near the bottom are reachable by thumbs
+   - Use safe-area-inset for devices with home indicators
+   - Make calculator card sticky at bottom on small screens
+*/
+@media (max-width: 640px) {
+  /* Add bottom padding so content isn't hidden behind the sticky bar */
+  .app {
+    padding-bottom: calc(env(safe-area-inset-bottom, 16px) + 92px); /* leave room for sticky bar */
+  }
+
+  /* Make the calculator area easier to reach: a separate sticky card near the bottom */
+  .calculator-card {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: calc(env(safe-area-inset-bottom, 12px) + 12px);
+    z-index: 50;
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: 0 10px 30px rgba(12,14,20,0.12);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  /* Increase touch targets */
+  .purchase-row input, .btn {
+    padding: 12px 14px;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+
+  /* Stack purchase row vertically to make buttons easier to tap */
+  .purchase-row{flex-direction:column;gap:10px}
+
+  /* Ensure result text is visible inside sticky card */
+  .result{margin-top:8px}
+
+  /* Slightly hide footer since sticky bar covers bottom; keep it visible above */
+  .footer{margin-bottom: calc(env(safe-area-inset-bottom, 16px) + 72px)}
+}
+
+/* Dark-mode outlines: prefer the explicit theme class first, fall back to OS preference */
+@media (prefers-color-scheme: dark) {
+  input[type="number"]{border:1px solid var(--dark-outline)}
+  .result{border:1px solid var(--dark-outline)}
+}
+.theme-dark input[type="number"], .theme-dark .result{
+  border:1px solid var(--dark-outline);
+}
+
+@media(min-width:640px){
+  .title{font-size:26px}
+  .app{padding:28px}
+}

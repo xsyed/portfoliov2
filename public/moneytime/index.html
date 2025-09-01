@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Money → Time Calculator — See purchase cost in work hours</title>
+    <meta name="description" content="Convert any purchase amount into the equivalent working time based on your annual income. Simple, privacy-first calculator with light/dark themes and localStorage persistence." />
+    <meta name="keywords" content="money to time, cost in hours, purchase time cost, hourly equivalent, budgeting, personal finance" />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://syedsamiuddin.com/moneytime" />
+    <meta name="theme-color" content="#1C973D" />
+
+    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="icon" href="favicon.png" type="image/png" />
+  </head>
+  <body>
+  <!-- Prevent mobile users from zooming (pinch/zoom) - moved to head if needed -->
+    <main class="app">
+      <header class="header">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+          <div>
+            <h1 class="title">Money → Time</h1>
+            <p class="subtitle">See how much work a purchase really costs</p>
+          </div>
+          <!-- Theme toggle: JS will wire #theme-toggle -->
+          <button id="theme-toggle" class="btn small" aria-pressed="false" aria-label="Toggle color theme">Light</button>
+        </div>
+      </header>
+
+      <section class="income-card">
+        <div class="income-display">
+          <label>Annual After-Tax Income</label>
+          <div class="income-row">
+            <span id="annual-display" class="annual-value">—</span>
+            <button id="edit-income" class="btn small">Edit</button>
+          </div>
+        </div>
+
+        <form id="income-form" class="income-form" aria-hidden="true">
+          <label for="annual-input">Enter annual income</label>
+          <input id="annual-input" type="number" inputmode="numeric" min="0" step="0.01" placeholder="e.g. 55000" />
+          <div class="form-actions">
+            <button type="submit" class="btn">Save</button>
+            <button type="button" id="cancel-income" class="btn secondary">Cancel</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="calculator-card">
+        <label for="purchase-input">Purchase amount</label>
+        <div class="purchase-row">
+          <input id="purchase-input" type="number" inputmode="numeric" min="0" step="0.01" placeholder="e.g. 19.99" />
+          <button id="calc-btn" class="btn">Calculate</button>
+        </div>
+
+        <div id="result" class="result" aria-live="polite">Enter an amount to see the time cost.</div>
+      </section>
+
+      </main>
+
+    <script src="src/script.js"></script>
+  </body>
+</html>
